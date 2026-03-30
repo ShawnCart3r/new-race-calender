@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Race Calender</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W8DTP90464"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W8DTP90464');
+</script>
+
+</head>
+<body>
+<!-- Ambient glows -->
+  <div class="ambient ambient--1"></div>
+  <div class="ambient ambient--2"></div>
+ 
+  <!-- Header -->
+  <header class="header">
+    <p class="header-tag">Fleet Feet Vermont &nbsp;·&nbsp; Race Calendar</p>
+    <h1 class="header-title">Upcoming <em>Races</em></h1>
+    <p class="header-intro">Browse local events by month. Tap any card to see every race, distances, location, and registration links.</p>
+  </header>
+ 
+  <!-- Controls -->
+  <div class="controls">
+    <div class="search-bar">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="text" id="search" placeholder="Search by name, location, or distance…" />
+    </div>
+    <div class="controls-row">
+      <div class="color-key">
+        <span class="key-item"><span class="key-dot today"></span>Today</span>
+        <span class="key-item"><span class="key-dot weekend"></span>Weekend</span>
+        <span class="key-item"><span class="key-dot weekday"></span>Weekday</span>
+      </div>
+      <button id="refresh-button">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+        Refresh
+      </button>
+    </div>
+  </div>
+ 
+  <!-- Month cards grid -->
+  <section class="months-section">
+    <div class="months-grid" id="months-grid">
+      <!-- populated by JS -->
+    </div>
+  </section>
+ 
+  <!-- Modal -->
+  <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true">
+    <div class="modal" id="modal">
+      <div class="modal-handle"></div>
+      <div class="modal-header">
+        <div>
+          <p class="modal-tag" id="modal-tag">Races</p>
+          <h2 class="modal-title" id="modal-title">Month</h2>
+          <p class="modal-subtitle" id="modal-subtitle"></p>
+        </div>
+        <button class="modal-close" id="modal-close" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="cards-grid" id="modal-cards-grid">
+        <!-- flip cards populated by JS -->
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
